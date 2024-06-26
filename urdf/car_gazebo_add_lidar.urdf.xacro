@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<robot name="car_gazebo" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:arg name="use_nominal_extrinsics" default="true"/>
+
+  <xacro:include filename="$(find rviz_gazebo)/urdf/car_gazebo_properties_add_lidar.urdf.xacro" />
+  <xacro:include filename="$(find rviz_gazebo)/urdf/plugin/driving_car.gazebo.xacro" />
+  <xacro:include filename="$(find rviz_gazebo)/urdf/plugin/lidar_car.gazebo.xacro" />
+  <xacro:include filename="$(find rviz_gazebo)/urdf/plugin/camera.gazebo.xacro" />
+
+  <xacro:property name="camera_link" value="0.05" />
+  <xacro:property name="height3" value="2.0" />
+  <xacro:property name="axel_offset" value="0.5" />
+  <xacro:property name="hokuyo_link" value="0.05" />
+
+  <xacro:camera_model/>
+  <xacro:car_properties/>
+  <xacro:lidar_model/>
+  <xacro:driving_gazebo_controller/>
+</robot>

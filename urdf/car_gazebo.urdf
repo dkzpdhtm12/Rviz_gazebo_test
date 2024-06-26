@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="car_model">
+  <link name="base_footprint"/>
+  <joint name="base_to_footprint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="1.0" />
+      <inertia
+        ixx="0.0190263636116466"
+        ixy="-0.00105969560369217"
+        ixz="-0.000113993243143701"
+        iyy="0.212504819894391"
+        iyz="-4.48977417022246E-05"
+        izz="0.212078411927734" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find rviz_gazebo)/meshes/test_robot/car_model.dae" scale="0.25 0.25 0.25"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find rviz_gazebo)/meshes/test_robot/car_model.dae" scale="0.25 0.25 0.25"/>
+      </geometry>
+    </collision>
+    <gravity>0 0 0</gravity>
+  </link>
+
+</robot>
